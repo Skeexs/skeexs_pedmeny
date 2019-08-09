@@ -87,8 +87,13 @@ OpenMenu = function()
     end)
 end
  
-    -- RegisterCommand("ped", function(source)
-    --     exports.pNotify:SendNotification({text = 'Du har öppnat <span style ="color:blue">Menyn</span>', type = "success", timeout = 200, layout = "bottomCenter", queue = "center"})
-    --     Citizen.Wait(500)
-    --     OpenMenu()
-    -- end, false)
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(1)
+        if IsControlJustReleased(0, Keys['F5']) then
+          exports.pNotify:SendNotification({text = 'Hej din lilla fittbög', type = "success", timeout = 200, layout = "bottomCenter", queue = "center"})  
+          Wait(500)           
+           OpenMenu()
+        end
+    end
+end)
