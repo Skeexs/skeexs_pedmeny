@@ -91,7 +91,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
         if IsControlJustReleased(0, Keys['F5']) then
-          exports.pNotify:SendNotification({text = 'Hej din lilla fittbög', type = "success", timeout = 200, layout = "bottomCenter", queue = "center"})  
+          exports.pNotify:SendNotification({text = 'Öppnar meny', type = "success", timeout = 200, layout = "bottomCenter", queue = "center"})  
           Wait(500)           
            OpenMenu()
         end
